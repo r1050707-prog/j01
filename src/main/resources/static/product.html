@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>케어가드 IMD-2000 · 제이커버넌트</title>
+  <meta name="description" content="케어가드 IMD-2000 사양, 감지 방식, 도입 비용, 특허와 준비 현황.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>
+        <strong>제이커버넌트</strong>
+        <span>J COVENANT</span>
+      </span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="주요">
+      <a href="/">홈</a>
+      <a href="/product.html" aria-current="page">케어가드</a>
+      <a href="/company.html">회사 소개</a>
+      <a href="/contact.html">도입 문의</a>
+    </nav>
+    <span class="server-pill" id="server-pill">서버 확인 중</span>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
+  </header>
+
+  <main id="main">
+    <header class="page-hero">
+      <p class="eyebrow">IMD-2000</p>
+      <h1>케어가드<br>선행 알리미 시스템</h1>
+      <p class="lead">사생활 영상을 남기지 않는 무선 센서, 전용 리모컨, 통합 관제로 야간 이탈을 먼저 알립니다. 센서 단독 감지 작동률은 당사 조사 기준 97%입니다.</p>
+    </header>
+
+    <section class="section">
+      <p class="kicker">SPEC</p>
+      <h2>제품 사양</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th>제품명</th><td>IMD-2000</td></tr>
+            <tr><th>운영체제</th><td>리눅스 임베디드</td></tr>
+            <tr><th>디스플레이 / 입력</th><td>OLED 1.3인치 / RGB 16키</td></tr>
+            <tr><th>인식 영역 / 거리</th><td>110도 / 최대 6m</td></tr>
+            <tr><th>센서 소비전력</th><td>50µA</td></tr>
+            <tr><th>센서 노드</th><td>최대 64개 (센서 48 · 무선 스위치 16)</td></tr>
+            <tr><th>무선</th><td>LoRa KR920-923 / 125kHz · 출력 23dBm</td></tr>
+            <tr><th>전원 / 최대 소비전력</th><td>12V 2A / 20W</td></tr>
+            <tr><th>작동온도</th><td>0°C ~ +50°C</td></tr>
+            <tr><th>LAN / HDMI</th><td>10/100/1000Mbps / 1080p</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">DESIGN</p>
+      <h2>현장에서 쓰이도록 맞춘 점</h2>
+      <div class="cards">
+        <article class="card"><h3>사생활 보호</h3><p>카메라를 쓰지 않는 무선 센서입니다. 침대 주변 이탈만 감지합니다.</p></article>
+        <article class="card"><h3>30분 설치</h3><p>배터리 방식이라 전기공사가 없고, 병실 조건이 바뀌면 다시 배치합니다.</p></article>
+        <article class="card"><h3>앱 없는 알림</h3><p>전용 리모컨 진동으로 알림을 놓치지 않습니다. 근무 전 센서 각도를 조정해 사각지대를 줄입니다.</p></article>
+        <article class="card"><h3>광역 관제</h3><p>16실을 동시에 보고, 1인 당직도 전체 상태를 확인합니다.</p></article>
+        <article class="card"><h3>기록</h3><p>이탈 이력이 쌓여 야간 행동 데이터로 남습니다.</p></article>
+        <article class="card"><h3>기본 구성</h3><p>IR 모션 센서, 메인 컨트롤러, 휴대 리모컨, 무선 스위치.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">COMPARE</p>
+      <h2>감지 방식은 이렇게 다릅니다</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>IR 센서 · 케어가드</th><th>레이더</th><th>매트·압력패드</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>감지 위치</th><td>침대 하단 직접 감지</td><td>공간 전체 전파 감지</td><td>매트 위 압력 변화</td></tr>
+            <tr><th>작동률</th><td>97%</td><td>85~95%</td><td>제품별 확인 필요</td></tr>
+            <tr><th>알림</th><td>전용 무선 리모컨 진동</td><td>스마트폰 앱</td><td>제품별 상이</td></tr>
+            <tr><th>설치</th><td>배터리 무선, 약 30분</td><td>전원 연결 필요</td><td>설치가 더 복잡할 수 있음</td></tr>
+            <tr><th>동시 관제</th><td>16실 통합</td><td>1실~부분 통합</td><td>소규모 또는 단일</td></tr>
+            <tr><th>현장 실증</th><td>요양원 5년</td><td>공공사업·신규 도입</td><td>1년 미만 단품 사례</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="padding-left:0">당사 조사 기준이며 제품별 사양은 달라질 수 있습니다.</p>
+    </section>
+
+    <section class="section">
+      <p class="kicker">PLAN</p>
+      <h2>50인 시설 · 16실 기준 도입 구조</h2>
+      <div class="plans">
+        <article class="plan">
+          <h3>설치비와 구독</h3>
+          <b>월 25만원</b>
+          <p>초기 설치비 200만원. 3년 합계 1,100만원.</p>
+        </article>
+        <article class="plan">
+          <h3>설치비 없는 구독</h3>
+          <b>월 35만원</b>
+          <p>초기 설치비 없음. 3년 합계 1,260만원.</p>
+        </article>
+      </div>
+      <ul class="ready">
+        <li><span>구독에 포함</span><span>시스템 관제, 소프트웨어 업그레이드, 유지보수, 배터리 2년 주기 리빌드</span></li>
+        <li><span>복지용구</span><span>국민건강보험 복지용구 등재를 2027년 목표로 추진 중입니다.</span></li>
+        <li><span>시범 운영</span><span>규모와 조건은 기관 여건에 맞춰 협의합니다.</span></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p class="kicker">IP</p>
+      <h2>등록 특허와 이어질 기술</h2>
+      <div class="cards">
+        <article class="card"><h3>등록특허 제10-1183455호</h3><p>보유 특허 2건 중 하나입니다.</p></article>
+        <article class="card"><h3>등록특허 제10-2230824호</h3><p>보유 특허 2건 중 하나입니다.</p></article>
+        <article class="card"><h3>17개 청구항 통합 출원 준비</h3><p>사고 직전 음성의 링버퍼 보존, 현장 라벨링 리모컨, 센서·마이크 일체와 레이저 범위 확인을 담을 예정입니다.</p></article>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="/contact.html">도입 조건 문의</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong data-field="name">주식회사 제이커버넌트</strong><br>
+      <span data-field="address">충청남도 천안시 서북구 불당36길 63, 3층 303-02호</span><br>
+      <span data-field="addressDetail">충남천안아산강소특구 제3캠퍼스(불당동)</span>
+    </div>
+    <div>
+      대표 <span data-field="ceo">이진</span><br>
+      사업자등록번호 <span data-field="businessNumber">791-87-03142</span><br>
+      개업 <span data-field="founded">2023-04-20</span>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+---
+description: 이 프로젝트를 수정하면 j01에서 pull한 뒤 커밋하고 push한다
+alwaysApply: true
+---
+
+# j01 동기화
+
+작업 폴더의 수정은 `r1050707-prog/j01`의 `main`과 맞춘다.
+
+1. 파일을 고치기 전에 `git pull --rebase origin main` 한다. 원격이 비어 있거나 업스트림이 없으면 pull은 건너뛴다.
+2. 수정이 끝나면 관련 파일만 커밋하고 `git push -u origin HEAD` 한다. 사용자가 커밋을 따로 말하지 않아도 이 순서를 수행한다.
+3. 토큰, 비밀번호, `.env`, `target/`, `.tools/`는 커밋하지 않는다. 토큰을 원격 URL이나 규칙 파일에 넣지 않는다.
+4. `git config`는 바꾸지 않는다. 작성자가 필요하면 해당 명령에만 `-c user.name=r1050707-prog -c user.email=r1050707@gmail.com`을 붙인다.
+5. `push --force`와 `reset --hard`는 사용자가 그 명령을 명시할 때만 한다.
+6. 인증에 실패하면 푸시를 멈추고 사용자에게 알린다.
