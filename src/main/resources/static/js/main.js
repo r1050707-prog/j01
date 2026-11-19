@@ -1,10 +1,59 @@
-const toggle = document.querySelector(".nav-toggle");
-const nav = document.querySelector("#site-nav");
+const menuButton = document.querySelector(".menu-equals");
+const fullMenu = document.querySelector("#full-menu");
+const menuReveal = document.querySelector(".full-menu-reveal");
+const menuLabel = menuButton ? menuButton.querySelector(".sr-only") : null;
+let menuToken = 0;
 
-if (toggle && nav) {
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(open));
+function placeReveal() {
+  const rect = menuButton.getBoundingClientRect();
+  const x = rect.left + rect.width / 2;
+  const y = rect.top + rect.height / 2;
+  const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+  menuReveal.style.left = x + "px";
+  menuReveal.style.top = y + "px";
+  menuReveal.style.width = radius * 2 + "px";
+  menuReveal.style.height = radius * 2 + "px";
+}
+
+function openFullMenu() {
+  menuToken += 1;
+  placeReveal();
+  fullMenu.hidden = false;
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => fullMenu.classList.add("is-open"));
+  });
+  document.body.classList.add("menu-open");
+  menuButton.setAttribute("aria-expanded", "true");
+  if (menuLabel) menuLabel.textContent = "전체메뉴 닫기";
+  const first = fullMenu.querySelector("a");
+  if (first) first.focus();
+}
+
+function closeFullMenu() {
+  const token = menuToken;
+  fullMenu.classList.remove("is-open");
+  document.body.classList.remove("menu-open");
+  menuButton.setAttribute("aria-expanded", "false");
+  if (menuLabel) menuLabel.textContent = "전체메뉴 열기";
+  const hide = () => {
+    if (token !== menuToken || fullMenu.classList.contains("is-open")) return;
+    fullMenu.hidden = true;
+  };
+  menuReveal.addEventListener("transitionend", hide, { once: true });
+  window.setTimeout(hide, 700);
+  menuButton.focus();
+}
+
+if (menuButton && fullMenu && menuReveal) {
+  menuButton.addEventListener("click", () => {
+    if (fullMenu.classList.contains("is-open")) closeFullMenu();
+    else openFullMenu();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && fullMenu.classList.contains("is-open")) closeFullMenu();
+  });
+  window.addEventListener("resize", () => {
+    if (fullMenu.classList.contains("is-open")) placeReveal();
   });
 }
 
